@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quiz - Coleta Seletiva e Lixeiras Coloridas</title>
+  <title>Quiz - Resíduo x Rejeito | CONAMA</title>
   <style>
     * {
       margin: 0;
@@ -39,165 +39,6 @@
       opacity: 0.8;
     }
 
-    .bins-row {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      margin: 20px 0 30px;
-      flex-wrap: wrap;
-    }
-
-    .bin-icon {
-      width: 40px;
-      height: 50px;
-      position: relative;
-      display: inline-block;
-      flex-shrink: 0;
-    }
-
-    /* Tampa da lixeira */
-    .bin-icon::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -4px;
-      right: -4px;
-      height: 8px;
-      background: inherit;
-      border-radius: 4px 4px 0 0;
-      filter: brightness(0.8);
-    }
-
-    /* Alca da tampa */
-    .bin-icon::after {
-      content: '';
-      position: absolute;
-      top: -5px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 14px;
-      height: 6px;
-      border: 3px solid;
-      border-color: inherit;
-      border-bottom: none;
-      border-radius: 6px 6px 0 0;
-      background: transparent;
-      filter: brightness(0.7);
-    }
-
-    /* Corpo da lixeira (trapezoidal) */
-    .bin-body {
-      position: absolute;
-      top: 8px;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: inherit;
-      clip-path: polygon(5% 0%, 95% 0%, 85% 100%, 15% 100%);
-      border-radius: 0 0 3px 3px;
-    }
-
-    /* Linhas decorativas no corpo */
-    .bin-body::before {
-      content: '';
-      position: absolute;
-      top: 35%;
-      left: 20%;
-      right: 20%;
-      height: 2px;
-      background: rgba(255,255,255,0.2);
-      box-shadow: 0 8px 0 rgba(255,255,255,0.15);
-    }
-
-    /* Versao pequena (dentro das alternativas) */
-    .bin-icon.small {
-      width: 24px;
-      height: 30px;
-    }
-
-    .bin-icon.small::before {
-      height: 5px;
-      left: -2px;
-      right: -2px;
-      border-radius: 3px 3px 0 0;
-    }
-
-    .bin-icon.small::after {
-      top: -4px;
-      width: 8px;
-      height: 4px;
-      border-width: 2px;
-      border-radius: 4px 4px 0 0;
-    }
-
-    .bin-icon.small .bin-body::before {
-      height: 1px;
-      box-shadow: 0 5px 0 rgba(255,255,255,0.15);
-    }
-
-    .bin-blue { background: #0055aa; }
-    .bin-red { background: #cc2222; }
-    .bin-green { background: #228b22; }
-    .bin-yellow { background: #daa520; }
-    .bin-brown { background: #8b4513; }
-    .bin-black { background: #333; }
-    .bin-orange { background: #e06000; }
-    .bin-white { background: #ddd; }
-    .bin-purple { background: #6a0dad; }
-    .bin-gray { background: #888; }
-
-    /* Legenda na tela inicial */
-    .bins-legend {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-      gap: 10px;
-      max-width: 600px;
-      margin: 0 auto 30px;
-      text-align: left;
-    }
-
-    .legend-item {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      background: rgba(255,255,255,0.06);
-      padding: 8px 12px;
-      border-radius: 8px;
-    }
-
-    .legend-item .bin-icon {
-      width: 22px;
-      height: 28px;
-      flex-shrink: 0;
-      margin-top: 6px;
-    }
-
-    .legend-item .bin-icon::before {
-      height: 5px;
-      left: -2px;
-      right: -2px;
-      border-radius: 3px 3px 0 0;
-    }
-
-    .legend-item .bin-icon::after {
-      top: -4px;
-      width: 8px;
-      height: 4px;
-      border-width: 2px;
-      border-radius: 4px 4px 0 0;
-    }
-
-    .legend-item span {
-      font-size: 0.85rem;
-      opacity: 0.9;
-    }
-
-    /* Lixeira dentro da alternativa */
-    .option-btn {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
 
     /* Tela inicial */
     #start-screen {
@@ -586,32 +427,18 @@
 <body>
   <div class="container">
     <header>
-      <h1>Quiz: Coleta Seletiva</h1>
-      <p>Lixeiras Coloridas e Reciclagem</p>
+      <h1>Quiz: Resíduo x Rejeito</h1>
+      <p>CONAMA - Classificação de Resíduos Sólidos</p>
     </header>
 
     <!-- Tela Inicial -->
     <div id="start-screen">
       <h2>Teste seus conhecimentos!</h2>
       <p>
-        A coleta seletiva e a separação correta do lixo são essenciais para a
-        preservação do meio ambiente. Neste quiz, você será desafiado com 10
-        perguntas sobre as lixeiras coloridas e a reciclagem no Brasil.
+        Você sabe a diferença entre resíduo sólido e rejeito segundo o CONAMA?
+        Neste quiz, você será desafiado com 10 perguntas sobre a classificação
+        correta dos materiais que descartamos no dia a dia.
       </p>
-
-      <div class="bins-legend">
-        <div class="legend-item"><div class="bin-icon bin-blue"><div class="bin-body"></div></div><span>Azul - Papel</span></div>
-        <div class="legend-item"><div class="bin-icon bin-red"><div class="bin-body"></div></div><span>Vermelha - Plástico</span></div>
-        <div class="legend-item"><div class="bin-icon bin-green"><div class="bin-body"></div></div><span>Verde - Vidro</span></div>
-        <div class="legend-item"><div class="bin-icon bin-yellow"><div class="bin-body"></div></div><span>Amarela - Metal</span></div>
-        <div class="legend-item"><div class="bin-icon bin-brown"><div class="bin-body"></div></div><span>Marrom - Orgânico</span></div>
-        <div class="legend-item"><div class="bin-icon bin-black"><div class="bin-body"></div></div><span>Preta - Madeira</span></div>
-        <div class="legend-item"><div class="bin-icon bin-orange"><div class="bin-body"></div></div><span>Laranja - Perigosos</span></div>
-        <div class="legend-item"><div class="bin-icon bin-white"><div class="bin-body"></div></div><span>Branca - Saúde</span></div>
-        <div class="legend-item"><div class="bin-icon bin-purple"><div class="bin-body"></div></div><span>Roxa - Radioativos</span></div>
-        <div class="legend-item"><div class="bin-icon bin-gray"><div class="bin-body"></div></div><span>Cinza - Não reciclável</span></div>
-      </div>
-
       <button class="btn" onclick="startQuiz()">Começar Quiz</button>
     </div>
 
@@ -661,7 +488,7 @@
         <span class="school-name">Colégio UNIFEV - Votuporanga</span>
         <span class="school-class">3º Ano A</span>
       </div>
-      <p class="footer-note">Quiz educativo sobre coleta seletiva - Ensino Médio</p>
+      <p class="footer-note">Quiz educativo sobre resíduo x rejeito - CONAMA - Ensino Médio</p>
     </footer>
   </div>
 
@@ -779,19 +606,6 @@
       }
     ];
 
-    const colorMap = {
-      'vermelha': 'bin-red',
-      'azul': 'bin-blue',
-      'verde': 'bin-green',
-      'amarela': 'bin-yellow',
-      'marrom': 'bin-brown',
-      'preta': 'bin-black',
-      'laranja': 'bin-orange',
-      'branca': 'bin-white',
-      'roxa': 'bin-purple',
-      'cinza': 'bin-gray'
-    };
-
     let currentQuestion = 0;
     let score = 0;
     let userAnswers = [];
@@ -822,19 +636,7 @@
         const btn = document.createElement('button');
         btn.className = 'option-btn';
 
-        var binClass = colorMap[option.toLowerCase()];
-        if (binClass) {
-          var binDiv = document.createElement('div');
-          binDiv.className = 'bin-icon small ' + binClass;
-          var bodyDiv = document.createElement('div');
-          bodyDiv.className = 'bin-body';
-          binDiv.appendChild(bodyDiv);
-          btn.appendChild(binDiv);
-        }
-
-        var textSpan = document.createElement('span');
-        textSpan.textContent = String.fromCharCode(65 + index) + ') ' + option;
-        btn.appendChild(textSpan);
+        btn.textContent = String.fromCharCode(65 + index) + ') ' + option;
 
         btn.onclick = function() { selectAnswer(index); };
         container.appendChild(btn);
