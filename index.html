@@ -546,25 +546,25 @@
     <div id="start-screen">
       <h2>Teste seus conhecimentos!</h2>
       <p>
-        A coleta seletiva e a separacao correta do lixo sao essenciais para a
-        preservacao do meio ambiente. Neste quiz, voce sera desafiado com 10
+        A coleta seletiva e a separação correta do lixo são essenciais para a
+        preservação do meio ambiente. Neste quiz, você será desafiado com 10
         perguntas sobre as lixeiras coloridas e a reciclagem no Brasil.
       </p>
 
       <div class="bins-legend">
         <div class="legend-item"><div class="bin-icon bin-blue"><div class="bin-body"></div></div><span>Azul - Papel</span></div>
-        <div class="legend-item"><div class="bin-icon bin-red"><div class="bin-body"></div></div><span>Vermelha - Plastico</span></div>
+        <div class="legend-item"><div class="bin-icon bin-red"><div class="bin-body"></div></div><span>Vermelha - Plástico</span></div>
         <div class="legend-item"><div class="bin-icon bin-green"><div class="bin-body"></div></div><span>Verde - Vidro</span></div>
         <div class="legend-item"><div class="bin-icon bin-yellow"><div class="bin-body"></div></div><span>Amarela - Metal</span></div>
-        <div class="legend-item"><div class="bin-icon bin-brown"><div class="bin-body"></div></div><span>Marrom - Organico</span></div>
+        <div class="legend-item"><div class="bin-icon bin-brown"><div class="bin-body"></div></div><span>Marrom - Orgânico</span></div>
         <div class="legend-item"><div class="bin-icon bin-black"><div class="bin-body"></div></div><span>Preta - Madeira</span></div>
         <div class="legend-item"><div class="bin-icon bin-orange"><div class="bin-body"></div></div><span>Laranja - Perigosos</span></div>
-        <div class="legend-item"><div class="bin-icon bin-white"><div class="bin-body"></div></div><span>Branca - Saude</span></div>
+        <div class="legend-item"><div class="bin-icon bin-white"><div class="bin-body"></div></div><span>Branca - Saúde</span></div>
         <div class="legend-item"><div class="bin-icon bin-purple"><div class="bin-body"></div></div><span>Roxa - Radioativos</span></div>
-        <div class="legend-item"><div class="bin-icon bin-gray"><div class="bin-body"></div></div><span>Cinza - Nao reciclavel</span></div>
+        <div class="legend-item"><div class="bin-icon bin-gray"><div class="bin-body"></div></div><span>Cinza - Não reciclável</span></div>
       </div>
 
-      <button class="btn" onclick="startQuiz()">Comecar Quiz</button>
+      <button class="btn" onclick="startQuiz()">Começar Quiz</button>
     </div>
 
     <!-- Tela do Quiz -->
@@ -578,7 +578,7 @@
         <div class="options" id="options-container"></div>
         <div class="feedback" id="feedback"></div>
       </div>
-      <button class="next-btn" id="next-btn" onclick="nextQuestion()">Proxima</button>
+      <button class="next-btn" id="next-btn" onclick="nextQuestion()">Próxima</button>
     </div>
 
     <!-- Tela de Resultado -->
@@ -596,77 +596,77 @@
 
     <!-- Tela de Revisao -->
     <div id="review-screen">
-      <h2 style="text-align:center; margin-bottom:20px;">Revisao das Respostas</h2>
+      <h2 style="text-align:center; margin-bottom:20px;">Revisão das Respostas</h2>
       <div id="review-container"></div>
       <button class="back-btn" onclick="backToResult()">Voltar ao Resultado</button>
     </div>
 
     <footer>
-      <p>Quiz educativo sobre coleta seletiva - Ensino Medio</p>
+      <p>Quiz educativo sobre coleta seletiva - Ensino Médio</p>
     </footer>
   </div>
 
   <script>
     const questions = [
       {
-        question: "Qual cor de lixeira e destinada ao descarte de papel e papelao na coleta seletiva padronizada pelo CONAMA?",
+        question: "Qual cor de lixeira é destinada ao descarte de papel e papelão na coleta seletiva padronizada pelo CONAMA?",
         options: ["Vermelha", "Azul", "Verde", "Amarela"],
         correct: 1,
-        explanation: "A lixeira azul e destinada a papel e papelao, conforme a Resolucao CONAMA n 275/2001, que estabelece o codigo de cores para a coleta seletiva no Brasil."
+        explanation: "A lixeira azul é destinada a papel e papelão, conforme a Resolução CONAMA nº 275/2001, que estabelece o código de cores para a coleta seletiva no Brasil."
       },
       {
-        question: "A lixeira vermelha na coleta seletiva e destinada a qual tipo de residuo?",
-        options: ["Vidro", "Metal", "Plastico", "Residuo organico"],
+        question: "A lixeira vermelha na coleta seletiva é destinada a qual tipo de resíduo?",
+        options: ["Vidro", "Metal", "Plástico", "Resíduo orgânico"],
         correct: 2,
-        explanation: "A lixeira vermelha e exclusiva para plasticos, como garrafas PET, sacolas, embalagens de produtos de limpeza, canos e tubos de PVC."
+        explanation: "A lixeira vermelha é exclusiva para plásticos, como garrafas PET, sacolas, embalagens de produtos de limpeza, canos e tubos de PVC."
       },
       {
-        question: "Em qual lixeira devem ser descartadas latas de aluminio e objetos de metal?",
+        question: "Em qual lixeira devem ser descartadas latas de alumínio e objetos de metal?",
         options: ["Vermelha", "Verde", "Amarela", "Laranja"],
         correct: 2,
-        explanation: "A lixeira amarela recebe metais como latas de aluminio, latas de aco, pregos, parafusos e tampas metalicas."
+        explanation: "A lixeira amarela recebe metais como latas de alumínio, latas de aço, pregos, parafusos e tampas metálicas."
       },
       {
-        question: "Qual e a funcao da lixeira marrom na coleta seletiva?",
-        options: ["Residuos hospitalares", "Residuos organicos", "Madeira", "Residuos radioativos"],
+        question: "Qual é a função da lixeira marrom na coleta seletiva?",
+        options: ["Resíduos hospitalares", "Resíduos orgânicos", "Madeira", "Resíduos radioativos"],
         correct: 1,
-        explanation: "A lixeira marrom recebe residuos organicos, como restos de alimentos, cascas de frutas e borra de cafe. Esses materiais podem ser compostados."
+        explanation: "A lixeira marrom recebe resíduos orgânicos, como restos de alimentos, cascas de frutas e borra de café. Esses materiais podem ser compostados."
       },
       {
         question: "Garrafas de vidro, potes e frascos devem ser descartados em qual lixeira?",
         options: ["Azul", "Branca", "Verde", "Cinza"],
         correct: 2,
-        explanation: "A lixeira verde e destinada a vidros. O vidro e 100% reciclavel e pode ser reutilizado infinitas vezes sem perder qualidade."
+        explanation: "A lixeira verde é destinada a vidros. O vidro é 100% reciclável e pode ser reutilizado infinitas vezes sem perder qualidade."
       },
       {
-        question: "Qual resolucao do CONAMA padronizou as cores das lixeiras para coleta seletiva no Brasil?",
-        options: ["Resolucao 237/1997", "Resolucao 275/2001", "Resolucao 358/2005", "Resolucao 401/2008"],
+        question: "Qual resolução do CONAMA padronizou as cores das lixeiras para coleta seletiva no Brasil?",
+        options: ["Resolução 237/1997", "Resolução 275/2001", "Resolução 358/2005", "Resolução 401/2008"],
         correct: 1,
-        explanation: "A Resolucao CONAMA n 275, de 25 de abril de 2001, estabeleceu o codigo de cores para os diferentes tipos de residuos na coleta seletiva."
+        explanation: "A Resolução CONAMA nº 275, de 25 de abril de 2001, estabeleceu o código de cores para os diferentes tipos de resíduos na coleta seletiva."
       },
       {
-        question: "A lixeira laranja na coleta seletiva e designada para qual tipo de residuo?",
-        options: ["Plastico contaminado", "Residuos perigosos", "Residuos hospitalares", "Residuos radioativos"],
+        question: "A lixeira laranja na coleta seletiva é designada para qual tipo de resíduo?",
+        options: ["Plástico contaminado", "Resíduos perigosos", "Resíduos hospitalares", "Resíduos radioativos"],
         correct: 1,
-        explanation: "A lixeira laranja e destinada a residuos perigosos, como pilhas, baterias, lampadas fluorescentes e embalagens de agrotoxicos."
+        explanation: "A lixeira laranja é destinada a resíduos perigosos, como pilhas, baterias, lâmpadas fluorescentes e embalagens de agrotóxicos."
       },
       {
-        question: "Qual das alternativas apresenta um material que NAO deve ser colocado na lixeira azul (papel)?",
-        options: ["Jornais e revistas", "Caixas de papelao", "Papel carbono", "Folhas de caderno"],
+        question: "Qual das alternativas apresenta um material que NÃO deve ser colocado na lixeira azul (papel)?",
+        options: ["Jornais e revistas", "Caixas de papelão", "Papel carbono", "Folhas de caderno"],
         correct: 2,
-        explanation: "Papel carbono, papel plastificado, papel metalizado e fotografias nao sao reciclaveis e nao devem ser colocados na lixeira azul."
+        explanation: "Papel carbono, papel plastificado, papel metalizado e fotografias não são recicláveis e não devem ser colocados na lixeira azul."
       },
       {
-        question: "Qual e a cor da lixeira destinada a residuos de servicos de saude (hospitalares)?",
+        question: "Qual é a cor da lixeira destinada a resíduos de serviços de saúde (hospitalares)?",
         options: ["Roxa", "Branca", "Laranja", "Preta"],
         correct: 1,
-        explanation: "A lixeira branca e destinada a residuos de servicos de saude, como seringas, gazes, luvas e materiais contaminados por agentes biologicos."
+        explanation: "A lixeira branca é destinada a resíduos de serviços de saúde, como seringas, gazes, luvas e materiais contaminados por agentes biológicos."
       },
       {
         question: "A lixeira cinza na coleta seletiva recebe qual tipo de material?",
-        options: ["Entulho de obra", "Residuos nao reciclaveis ou misturados", "Cinzas e poeira", "Residuos eletronicos"],
+        options: ["Entulho de obra", "Resíduos não recicláveis ou misturados", "Cinzas e poeira", "Resíduos eletrônicos"],
         correct: 1,
-        explanation: "A lixeira cinza recebe residuos gerais nao reciclaveis, contaminados ou misturados que nao se encaixam nas demais categorias da coleta seletiva."
+        explanation: "A lixeira cinza recebe resíduos gerais não recicláveis, contaminados ou misturados que não se encaixam nas demais categorias da coleta seletiva."
       }
     ];
 
@@ -766,7 +766,7 @@
       }
 
       const nextBtn = document.getElementById('next-btn');
-      nextBtn.textContent = currentQuestion === questions.length - 1 ? 'Ver Resultado' : 'Proxima';
+      nextBtn.textContent = currentQuestion === questions.length - 1 ? 'Ver Resultado' : 'Próxima';
       nextBtn.className = 'next-btn show';
     }
 
@@ -792,15 +792,15 @@
       if (percentage >= 80) {
         cssClass = 'great';
         title = 'Excelente!';
-        message = 'Voce domina o tema da coleta seletiva! Continue conscientizando as pessoas ao seu redor sobre a importancia da reciclagem.';
+        message = 'Você domina o tema da coleta seletiva! Continue conscientizando as pessoas ao seu redor sobre a importância da reciclagem.';
       } else if (percentage >= 50) {
         cssClass = 'good';
         title = 'Bom resultado!';
-        message = 'Voce tem bons conhecimentos, mas ainda pode aprender mais sobre coleta seletiva. Revise as questoes que errou!';
+        message = 'Você tem bons conhecimentos, mas ainda pode aprender mais sobre coleta seletiva. Revise as questões que errou!';
       } else {
         cssClass = 'low';
         title = 'Precisa estudar mais!';
-        message = 'A coleta seletiva e fundamental para o meio ambiente. Revise o conteudo e tente novamente!';
+        message = 'A coleta seletiva é fundamental para o meio ambiente. Revise o conteúdo e tente novamente!';
       }
 
       circle.className = 'score-circle ' + cssClass;
