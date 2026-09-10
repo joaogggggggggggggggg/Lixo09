@@ -534,6 +534,20 @@
       margin-bottom: 16px;
     }
 
+    .member-photo {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid rgba(255,255,255,0.3);
+    }
+
+    .member-name {
+      font-size: 1rem;
+      font-weight: 600;
+      opacity: 0.9;
+    }
+
     .school-logo {
       width: 280px;
       max-width: 80%;
@@ -637,6 +651,8 @@
 
     <footer>
       <div class="school-info">
+        <img class="member-photo" src="data:image/jpeg;base64,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" alt="Luís Gustavo">
+        <span class="member-name">Luís Gustavo</span>
         <svg class="school-logo" viewBox="0 0 400 80" xmlns="http://www.w3.org/2000/svg">
           <text x="0" y="62" font-family="'Segoe UI', Arial, sans-serif" font-size="58" font-weight="700">
             <tspan fill="#e8881c">colégio</tspan><tspan fill="#ffffff"> unifev</tspan>
