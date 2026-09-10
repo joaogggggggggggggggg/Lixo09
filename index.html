@@ -569,7 +569,7 @@
       <div class="locked-card">
         <div class="lock-icon">&#128274;</div>
         <h2>Quiz já realizado!</h2>
-        <p>Você já completou este quiz neste dispositivo. Cada pessoa só pode responder uma vez.</p>
+        <p>Você já completou este quiz neste dispositivo.</p>
         <div id="locked-result"></div>
       </div>
     </div>
@@ -596,7 +596,7 @@
         <p id="result-message"></p>
         <div id="prize-section"></div>
         <div id="verification-section"></div>
-        <div class="btn-group">
+        <div class="btn-group" id="result-buttons">
           <button class="btn-review" onclick="showReview()">Ver Respostas</button>
         </div>
       </div>
@@ -824,16 +824,50 @@
         getPrizeHTML(data.score) +
         getVerificationHTML(data.name, data.score, data.timestamp);
 
+      if (canRetry(data)) {
+        html += '<p style="margin-top:16px;opacity:0.8;">Você ainda tem mais 1 tentativa!</p>' +
+          '<button class="btn" style="margin-top:12px" onclick="retryQuiz()">Tentar Novamente</button>';
+      }
+
       document.getElementById('locked-result').innerHTML = html;
+    }
+
+    function retryQuiz() {
+      try {
+        var saved = localStorage.getItem(STORAGE_KEY);
+        if (saved) {
+          var data = JSON.parse(saved);
+          playerName = data.name;
+        }
+      } catch(e) {}
+      document.getElementById('locked-screen').style.display = 'none';
+      document.getElementById('quiz-screen').style.display = 'block';
+      currentQuestion = 0;
+      score = 0;
+      userAnswers = [];
+      showQuestion();
+    }
+
+    function getAttempts() {
+      try {
+        var val = localStorage.getItem(STORAGE_KEY + '_attempts');
+        return val ? parseInt(val) : 0;
+      } catch(e) { return 0; }
     }
 
     function saveResult(name, score) {
       var timestamp = Date.now();
-      var data = { name: name, score: score, timestamp: timestamp };
+      var attempts = getAttempts() + 1;
+      var data = { name: name, score: score, timestamp: timestamp, attempts: attempts };
       try {
         localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+        localStorage.setItem(STORAGE_KEY + '_attempts', String(attempts));
       } catch(e) {}
       return timestamp;
+    }
+
+    function canRetry(data) {
+      return data.score < 5 && data.attempts < 2;
     }
 
     function startQuiz() {
@@ -956,6 +990,24 @@
       document.getElementById('prize-section').innerHTML = getPrizeHTML(score);
       document.getElementById('verification-section').innerHTML =
         getVerificationHTML(playerName, score, timestamp);
+
+      var btnGroup = document.getElementById('result-buttons');
+      var attempts = getAttempts();
+      if (score < 5 && attempts < 2) {
+        var retryBtn = document.createElement('button');
+        retryBtn.className = 'btn';
+        retryBtn.textContent = 'Tentar Novamente';
+        retryBtn.style.cssText = 'padding:12px 32px;font-size:1rem;';
+        retryBtn.onclick = function() {
+          document.getElementById('result-screen').style.display = 'none';
+          document.getElementById('quiz-screen').style.display = 'block';
+          currentQuestion = 0;
+          score = 0;
+          userAnswers = [];
+          showQuestion();
+        };
+        btnGroup.insertBefore(retryBtn, btnGroup.firstChild);
+      }
     }
 
     function showReview() {
