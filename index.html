@@ -757,8 +757,8 @@
       }
       hash = Math.abs(hash);
       var hex = hash.toString(16).toUpperCase();
-      while (hex.length < 8) hex = '0' + hex;
-      return 'CONAMA-' + hex.slice(0, 4) + '-' + hex.slice(4, 8);
+      while (hex.length < 4) hex = '0' + hex;
+      return 'RX-' + hex.slice(0, 4);
     }
 
     function formatDate(ts) {
