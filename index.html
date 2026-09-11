@@ -626,114 +626,114 @@
   <script>
     const questions = [
       {
-        question: "Segundo o CONAMA, qual é a diferença entre resíduo sólido e rejeito?",
+        question: "O que é um resíduo?",
         options: [
-          "Não há diferença, são sinônimos",
-          "Resíduo pode ser reaproveitado; rejeito não tem mais possibilidade de tratamento",
-          "Rejeito é reciclável; resíduo não",
-          "Resíduo é líquido; rejeito é sólido"
+          "Tudo que jogamos fora",
+          "Algo que ainda pode ser reciclado ou reaproveitado",
+          "Algo que não serve mais pra nada",
+          "Só lixo orgânico"
         ],
         correct: 1,
-        explanation: "Resíduo sólido é todo material que ainda pode ser reciclado, reutilizado ou tratado. Rejeito é aquele que, depois de esgotadas todas as possibilidades de tratamento, só pode ir para disposição final (aterro sanitário)."
+        explanation: "Resíduo é tudo aquilo que ainda pode ser reciclado, reutilizado ou transformado em algo novo!"
       },
       {
-        question: "Uma garrafa PET vazia é classificada como resíduo ou rejeito?",
+        question: "O que é um rejeito?",
         options: [
-          "Rejeito, pois é descartável",
-          "Resíduo, pois pode ser reciclada",
-          "Rejeito, pois é feita de plástico",
+          "Qualquer tipo de lixo",
+          "Lixo que pode ser reciclado",
+          "Lixo que não tem mais como reciclar ou reaproveitar",
+          "Só lixo de plástico"
+        ],
+        correct: 2,
+        explanation: "Rejeito é o lixo que não tem mais jeito — não dá pra reciclar nem reaproveitar. Só pode ir pro aterro sanitário."
+      },
+      {
+        question: "Uma garrafa de plástico vazia é resíduo ou rejeito?",
+        options: [
+          "Rejeito",
+          "Resíduo",
+          "Nenhum dos dois",
+          "Depende da cor"
+        ],
+        correct: 1,
+        explanation: "A garrafa de plástico é resíduo porque pode ser reciclada e virar um produto novo!"
+      },
+      {
+        question: "Uma fralda usada é resíduo ou rejeito?",
+        options: [
+          "Resíduo",
+          "Rejeito",
+          "Pode ser reciclada",
+          "Depende da marca"
+        ],
+        correct: 1,
+        explanation: "A fralda usada é rejeito porque está suja e não tem como reciclar. Só pode ir pro aterro sanitário."
+      },
+      {
+        question: "Casca de banana e restos de comida são o quê?",
+        options: [
+          "Rejeito, porque apodrecem",
+          "Resíduo, porque viram adubo",
+          "Nem resíduo nem rejeito",
+          "Rejeito, porque são nojentos"
+        ],
+        correct: 1,
+        explanation: "Restos de comida são resíduo! Eles podem virar adubo através da compostagem."
+      },
+      {
+        question: "Papel higiênico usado é resíduo ou rejeito?",
+        options: [
+          "Resíduo, porque é feito de papel",
+          "Rejeito, porque está sujo e não dá pra reciclar",
+          "Resíduo, porque é biodegradável",
           "Nenhum dos dois"
         ],
         correct: 1,
-        explanation: "A garrafa PET é um resíduo sólido reciclável. O plástico PET pode ser transformado em novos produtos, portanto ainda tem possibilidade de tratamento e reaproveitamento."
+        explanation: "Papel higiênico usado é rejeito. Mesmo sendo de papel, está contaminado e não tem como reciclar."
       },
       {
-        question: "Uma fralda descartável usada é classificada como:",
+        question: "Latinha de refrigerante é resíduo ou rejeito?",
         options: [
-          "Resíduo reciclável",
-          "Resíduo orgânico",
           "Rejeito",
-          "Resíduo perigoso"
-        ],
-        correct: 2,
-        explanation: "A fralda usada é um rejeito — está contaminada com material biológico e não existe tecnologia viável para reciclá-la. Esgotadas todas as possibilidades, só resta a disposição final em aterro sanitário."
-      },
-      {
-        question: "Cascas de frutas e restos de comida são classificados como resíduo ou rejeito?",
-        options: [
-          "Rejeito, pois apodrecem",
-          "Resíduo, pois podem ser compostados",
-          "Rejeito, pois não são recicláveis",
-          "Nem resíduo nem rejeito"
+          "Resíduo",
+          "Depende se está amassada",
+          "Nenhum dos dois"
         ],
         correct: 1,
-        explanation: "Restos orgânicos são resíduos sólidos, pois ainda podem ser tratados por compostagem, transformando-se em adubo. Como há possibilidade de reaproveitamento, NÃO são rejeitos."
+        explanation: "A latinha é resíduo! O alumínio pode ser reciclado várias e várias vezes sem perder qualidade."
       },
       {
-        question: "Qual é a destinação correta para os rejeitos, segundo a legislação ambiental brasileira?",
+        question: "Para onde vai o rejeito?",
         options: [
-          "Lixão a céu aberto",
-          "Reciclagem industrial",
-          "Disposição final em aterro sanitário",
-          "Incineração obrigatória"
-        ],
-        correct: 2,
-        explanation: "Os rejeitos devem ser encaminhados para disposição final ambientalmente adequada, ou seja, aterros sanitários. A Política Nacional de Resíduos Sólidos proíbe o descarte em lixões a céu aberto."
-      },
-      {
-        question: "Um papel de embrulho limpo e uma embalagem de salgadinho com gordura: como são classificados?",
-        options: [
-          "Ambos são resíduos recicláveis",
-          "Ambos são rejeitos",
-          "Papel limpo é resíduo; embalagem engordurada é rejeito",
-          "Papel limpo é rejeito; embalagem engordurada é resíduo"
-        ],
-        correct: 2,
-        explanation: "O papel limpo é resíduo reciclável. Já a embalagem metalizada contaminada com gordura não pode ser reciclada — é um rejeito, pois esgotaram-se as possibilidades de tratamento."
-      },
-      {
-        question: "Latas de alumínio são classificadas como resíduo ou rejeito?",
-        options: [
-          "Rejeito, pois são descartáveis",
-          "Resíduo, pois o alumínio é 100% reciclável",
-          "Rejeito, pois são feitas de metal",
-          "Depende do tamanho da lata"
+          "Para a reciclagem",
+          "Para o aterro sanitário",
+          "Para o lixão",
+          "Para a compostagem"
         ],
         correct: 1,
-        explanation: "Latas de alumínio são resíduos sólidos recicláveis. O alumínio pode ser reciclado infinitas vezes sem perder qualidade, sendo um dos materiais com maior taxa de reciclagem no Brasil."
+        explanation: "O rejeito vai para o aterro sanitário, que é o lugar correto para o lixo que não pode ser reciclado."
       },
       {
-        question: "Papel higiênico usado é classificado como:",
+        question: "Por que é importante separar resíduo de rejeito?",
         options: [
-          "Resíduo reciclável, pois é feito de papel",
-          "Resíduo orgânico, pois é biodegradável",
-          "Rejeito, pois está contaminado e não pode ser reciclado",
-          "Resíduo perigoso"
-        ],
-        correct: 2,
-        explanation: "Papel higiênico usado é rejeito. Apesar de ser feito de papel, a contaminação biológica inviabiliza qualquer forma de reciclagem ou tratamento, restando apenas a disposição final em aterro."
-      },
-      {
-        question: "Por que é importante separar resíduos de rejeitos antes do descarte?",
-        options: [
-          "Não é importante, tudo vai para o mesmo lugar",
-          "Porque os resíduos podem ser reciclados, reduzindo o volume enviado aos aterros",
-          "Porque os rejeitos são mais valiosos que os resíduos",
-          "Apenas por questão estética"
+          "Não é importante",
+          "Para que o que pode ser reciclado não vá pro aterro",
+          "Só por estética",
+          "Porque a lei obriga, mas não faz diferença"
         ],
         correct: 1,
-        explanation: "Separar resíduos de rejeitos permite que materiais recicláveis sejam reaproveitados, reduzindo o volume de lixo nos aterros, economizando recursos naturais e diminuindo a poluição ambiental."
+        explanation: "Separando, o que pode ser reciclado é reaproveitado e menos lixo vai parar nos aterros. Isso ajuda o meio ambiente!"
       },
       {
-        question: "Uma garrafa de vidro quebrada é classificada como:",
+        question: "Garrafa de vidro quebrada é resíduo ou rejeito?",
         options: [
-          "Rejeito, pois está quebrada e inutilizável",
-          "Resíduo perigoso, pois pode cortar",
-          "Resíduo reciclável, pois o vidro pode ser reciclado mesmo quebrado",
-          "Rejeito, pois vidro quebrado não tem valor"
+          "Rejeito, porque está quebrada",
+          "Resíduo, porque o vidro pode ser reciclado mesmo quebrado",
+          "Rejeito, porque vidro quebrado é perigoso",
+          "Nenhum dos dois"
         ],
-        correct: 2,
-        explanation: "O vidro, mesmo quebrado, é um resíduo reciclável. Ele é 100% reciclável e pode ser fundido e transformado em novas garrafas e objetos infinitas vezes. Estar quebrado não o transforma em rejeito."
+        correct: 1,
+        explanation: "Vidro quebrado ainda é resíduo! Ele pode ser derretido e virar uma garrafa nova. Quebrado não quer dizer que não recicla."
       }
     ];
 
