@@ -770,19 +770,14 @@
     }
 
     function getPrizeHTML(score) {
-      if (score >= 8) {
+      if (score >= 7) {
         return '<div class="prize-box">' +
-          '<h3>PRIMEIRO LUGAR</h3>' +
-          '<p>Parabéns! Você acertou ' + score + '/10 e conquistou o prêmio máximo!</p>' +
-          '</div>';
-      } else if (score >= 5) {
-        return '<div class="prize-box">' +
-          '<h3>SEGUNDO LUGAR</h3>' +
-          '<p>Muito bem! Você acertou ' + score + '/10 e conquistou um prêmio!</p>' +
+          '<h3>PARABÉNS, VOCÊ GANHOU!</h3>' +
+          '<p>Você acertou ' + score + '/10 e conquistou o prêmio!</p>' +
           '</div>';
       } else {
         return '<div class="no-prize-box">' +
-          '<p>Você acertou ' + score + '/10. Infelizmente não atingiu a pontuação mínima para um prêmio (5 acertos).</p>' +
+          '<p>Você acertou ' + score + '/10. Infelizmente não atingiu a pontuação mínima para o prêmio (7 acertos).</p>' +
           '</div>';
       }
     }
@@ -865,7 +860,7 @@
     }
 
     function canRetry(data) {
-      return data.score < 5 && data.attempts < 2;
+      return data.score < 7 && data.attempts < 2;
     }
 
     function startQuiz() {
@@ -991,7 +986,7 @@
 
       var btnGroup = document.getElementById('result-buttons');
       var attempts = getAttempts();
-      if (score < 5 && attempts < 2) {
+      if (score < 7 && attempts < 2) {
         var retryBtn = document.createElement('button');
         retryBtn.className = 'btn';
         retryBtn.textContent = 'Tentar Novamente';
